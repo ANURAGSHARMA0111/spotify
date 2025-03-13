@@ -1,11 +1,12 @@
-import React, { useContext } from 'react'
-import Sidebar from './Component/Sidebar'
-import Player from './Component/Player'
-import Display from './Component/Display'
-import { PlayerContext } from './context/PlayerContext'
+import React, { useContext } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Sidebar from './Component/Sidebar';
+import Player from './Component/Player';
+import Display from './Component/Display';
+import { PlayerContext } from './context/PlayerContext';
 
 export const App = () => {
-  const { audioRef ,track } = useContext(PlayerContext)
+  const { audioRef, track } = useContext(PlayerContext);
 
   return (
     <div className='h-screen bg-black'>
@@ -14,9 +15,9 @@ export const App = () => {
         <Display />
       </div>
       <Player />
-      <audio ref={audioRef} src={track.file}preload='auto'></audio>
+      <audio ref={audioRef} src={track.file} preload='auto'></audio>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
